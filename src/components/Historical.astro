@@ -1,0 +1,32 @@
+---
+import HistoricalItem from "./HistoricalItem.astro"
+
+const experience = [
+    {
+        title: 'Frontend Developer',
+        company: 'Acme Inc.',
+        startDate: 'Jan 2020',
+        description: 'I work on the frontend team to build and maintain the company\'s website. I am responsible for the design and implementation of new features and improvements to the site. I also work closely with the design team to ensure that the site is visually appealing and user-friendly.'
+    },
+    {
+        title: 'Web Developer',
+        company: 'Tech Co.',
+        startDate: 'Jun 2018',
+        description: 'I worked on the web development team to build and maintain the company\'s website. I was responsible for the design and implementation of new features and improvements to the site. I also worked closely with the design team to ensure that the site was visually appealing and user-friendly.'
+    },
+    {
+        title: 'Junior Developer',
+        company: 'Startup Inc.',
+        startDate: 'Jan 2017',
+        description: 'I worked on the development team to build and maintain the company\'s website. I was responsible for the design and implementation of new features and improvements to the site. I also worked closely with the design team to ensure that the site was visually appealing and user-friendly.'
+    }
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    <li class="mb-10 ms-4">
+        { experience.map((item, index) => (
+            <HistoricalItem {...item} key={index} />
+        ))}
+    </li>
+</ol>
+

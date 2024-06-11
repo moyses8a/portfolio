@@ -4,44 +4,49 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import GitHubIcon from "../components/icons/GitHub.astro";
 import SocialLink from "../components/SocialLink.astro";
 import Historical from "../components/Historical.astro";
+import Projects from "../components/Projects.astro";
 const exp = new Date().getFullYear() - 2018;
 ---
 
 <Layout
 	title="Portafolio de Moisés Ochoa - Desarrollador y Programador Web"
 	description="Ocupas una mano con tu projecto Web, contactame seguro te puedo ayudar.">
-  <main>
+  <main class="px-4">
     <section class="w-full mx-auto lg:w-[740px] py-44 pb-20">
       <img
         src="https://media.licdn.com/dms/image/C5603AQF7-YddVG5b4Q/profile-displayphoto-shrink_100_100/0/1649820288907?e=1723680000&v=beta&t=TFFnwfHeNWK3DBnWEi4SmhoXWodnaFlnKoTlE9fLSFI"
-        class="rounded-full w-18 h-18 my-3 border-purple-900 border-4"
+        class="rounded-full w-18 h-18 md:w-16 md:h-16 lg:w-18 lg:h-18 my-3 border-purple-900 border-4"
         alt="Moisés photo"
       />
-      <h1 class="text-white text-5xl font-bold gap-x-4 pb-4">
+      <h1 class="text-white pb-6 text-3xl md:text-4xl lg:text-5xl font-bold gap-x-4 pb-4">
         Hola, soy Moisés Ochoa.
       </h1>
-      <h2 class="text-xl opacity-80">
+      <h2 class="text-xl opacity-80 text-wrap max-w-[700px]">
         <span>+{exp} años de experiencia. </span><span
           class="text-yellow-200/90"
           >Desarrollador Web y entuciasta de la Tecnología.</span
-        ><br /><span class="opacity-75">
-          Siempre felíz de participar en interfaces atractivas y eficaces.</span>
+        ><span class="opacity-75">
+          Siempre felíz de participar en el desarrollo de interfaces atractivas y eficaces.</span>
       </h2>
 
-	  <nav class="flex gap-x-4 mt-8">
+	  <nav class="flex gap-4 mt-8 flex-wrap">
 		<SocialLink href="https://www.linkedin.com/in/moyses8a">
-			<LinkedInIcon class="size-6"/>
+			<LinkedInIcon class="size-4 lg:size-6"/>
 			LinkedIn
 		</SocialLink>
 		<SocialLink href="https://github.com/moyses8a">
-			<GitHubIcon class="size-6"/>
+			<GitHubIcon class="size-4 lg:size-6"/>
 			GitHub
 		</SocialLink>
 	  </nav>
     </section>
-    <section class="w-full mx-auto lg:w-[740px]" id="experience"
-      <h2 class="text-2xl mb-10 font-semibold">Experiencia laboral</h2>
+    <section class="w-full mx-auto lg:w-[740px]" id="experience">
+      <h2 class="text-2xl mb-3 font-semibold">Experiencia laboral</h2>
       <Historical />
+    </section>
+    <section class="w-full mx-auto lg:w-[740px] pt-4 pb-8" id="projects">
+      <h2 class="text-2xl mb-3 font-semibold">Projectos</h2>
+      <Projects />
     </section>
   </main>
 </Layout>

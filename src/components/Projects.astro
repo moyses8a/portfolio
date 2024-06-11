@@ -1,0 +1,68 @@
+---
+import AngularIcon from '../components/icons/Angular.astro'
+import ReactIcon from '../components/icons/React.astro'
+const PROJECTS = [
+    {
+        title: 'Project 1',
+        description: 'This is a project description',
+        image: 'https://via.placeholder.com/320x180',
+        link: 'https://www.google.com',
+        github: '',
+        tags: ['angular', 'TypeScript', 'NodeJs', 'MongoDB'],
+    },
+    {
+        title: 'Project 2',
+        description: 'This is a project description',
+        image: 'https://via.placeholder.com/320x180',
+        link: 'https://www.google.com',
+        github: '',
+        tags: ['tag1', 'tag2'],
+    },
+    {
+        title: 'Project 2',
+        description: 'This is a project description',
+        image: 'https://via.placeholder.com/320x180',
+        link: 'https://www.google.com',
+        github: '',
+        tags: ['tag1', 'tag2'],
+    },
+    {
+        title: 'Project 2',
+        description: 'This is a project description',
+        image: 'https://via.placeholder.com/320x180',
+        link: 'https://www.google.com',
+        github: '',
+        tags: ['tag1', 'tag2'],
+    },
+    {
+        title: 'Project 3',
+        description: 'This is a project description',
+        image: 'https://via.placeholder.com/320x180',
+        link: 'https://www.google.com',
+        github: '',
+        tags: ['tag1', 'tag2'],
+    }
+]
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+        PROJECTS.map(({ title, description, image, link, github, tags }) => {
+            return (
+                <div class="w-full max-w-sm rounded-lg shadow border border-gray-700 py-2 px-2">
+                    <h5 class="text-md font-semibold tracking-tighttext-white py-1 pt-0 opacity-70">{title}</h5>
+                    <img class="" src={image} alt={title} />
+                    <p class="text-sm opacity-80 text-wrap pt-2 pb-1">{description}</p>
+                    <div class="flex flex-wrap gap-x-1 gap-y-1 py-2">
+                        {
+                            tags.map(tag => {
+                                return (
+                                    tag
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            )
+        })
+    }
+</div>

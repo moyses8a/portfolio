@@ -6,7 +6,7 @@ import GitIcon from '../components/icons/Git.astro'
 const PROJECTS = [
     {
         title: 'Epeak',
-        description: 'Este projecto lo realice con un asociado desde cero, se trata de una plataforma que permite llevar del control de las tareas de los estudiantes, realizar examenes ademas incluye un simulador del SAT para permitir practicas por parte de los estudiantes.',
+        description: 'Desarrollada desde cero en colaboración con un asociado, ePeak.mx es una plataforma que facilita la gestión de tareas y la realización de exámenes. Además, incluye un simulador del SAT para ayudar a los estudiantes a prepararse eficazmente.',
         image: '/projects/epeak.webp',
         link: 'https://www.epeak.mx',
         github: '',
@@ -14,7 +14,7 @@ const PROJECTS = [
     },
     {
         title: 'Codes Fortress',
-        description: 'Pagina Web contruida en React y backend con NestJs que permite registrar preguntas de entrevista, para despues poder estudiar.',
+        description: 'Es una página web desarrollada con React y un backend en NestJS. Nuestra plataforma te permite registrar y estudiar preguntas de entrevistas técnicas. Además, cuenta con etiquetas que te permiten filtrar las preguntas por temas, facilitando el estudio específico de lo que necesitas.',
         image: '/projects/codesfortress.webp',
         link: 'https://codesfortress.com/',
         github: '',
@@ -42,13 +42,13 @@ const PROJECTS = [
                                 }
                             </div>
                         </div>
-                        <div class="flex flex-row justify-around">
+                        <div class="flex flex-row justify-start">
                             {
                                 link && (
                                 <a href={link} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia la pagina del proyecto">Enlace</a>)
                             }
                             {
-                                link && (
+                                github && (
                                 <a href={github} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia el repositorio del proyecto">Repositorio</a>)
                             }
                         </div>

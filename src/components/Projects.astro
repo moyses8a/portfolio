@@ -1,10 +1,12 @@
 ---
+import LinkNewTabIcon from "./icons/LinkNewTab.astro";
 const PROJECTS = [
     {
         title: 'Epeak',
         description: 'Desarrollada desde cero en colaboración con un asociado, ePeak.mx es una plataforma que facilita la gestión de tareas y la realización de exámenes. Además, incluye un simulador del SAT para ayudar a los estudiantes a prepararse eficazmente.',
         image: '/projects/epeak.webp',
         link: 'https://www.epeak.mx',
+        linkLabel: 'Epeak.mx',
         github: '',
         tags: ['Angular', 'Material UI', 'TypeScript', 'NodeJs', 'NestJs', 'GitLab', 'MongoDB'],
     },
@@ -13,6 +15,7 @@ const PROJECTS = [
         description: 'Es una página web desarrollada con React y un backend en NestJS. Nuestra plataforma te permite registrar y estudiar preguntas de entrevistas técnicas. Además, cuenta con etiquetas que te permiten filtrar las preguntas por temas, facilitando el estudio específico de lo que necesitas.',
         image: '/projects/codesfortress.webp',
         link: 'https://codesfortress.com/',
+        linkLabel: 'codesfortress.com', 
         github: '',
         tags: ['React', 'Tailwind', 'TypeScript', 'NodeJs', 'NestJs', 'GitLab', 'MongoDB'],
     }
@@ -20,7 +23,7 @@ const PROJECTS = [
 ---
 <div class="flex flex-col">
     {
-        PROJECTS.map(({ title, description, image, link, github, tags }) => {
+        PROJECTS.map(({ title, description, image, link, linkLabel, github, tags }) => {
             return (
                 <article class="flex flex-row w-full rounded-lg mb-4">
                     <img class="mr-3 rounded-md flex h-full" src={image} alt={title} />
@@ -41,7 +44,7 @@ const PROJECTS = [
                         <div class="flex flex-row justify-start">
                             {
                                 link && (
-                                <a href={link} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia la pagina del proyecto">Enlace</a>)
+                                <a href={link} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia la pagina del proyecto"><span class="mr-2">{ linkLabel }</span> <LinkNewTabIcon/> </a>)
                             }
                             {
                                 github && (

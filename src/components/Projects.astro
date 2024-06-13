@@ -1,67 +1,59 @@
 ---
 import AngularIcon from '../components/icons/Angular.astro'
 import ReactIcon from '../components/icons/React.astro'
+import LinkIcon from '../components/icons/Link.astro'
+import GitIcon from '../components/icons/Git.astro'
 const PROJECTS = [
     {
-        title: 'Project 1',
-        description: 'This is a project description',
-        image: 'https://via.placeholder.com/320x180',
-        link: 'https://www.google.com',
+        title: 'Epeak',
+        description: 'Este projecto lo realice con un asociado desde cero, se trata de una plataforma que permite llevar del control de las tareas de los estudiantes, realizar examenes ademas incluye un simulador del SAT para permitir practicas por parte de los estudiantes.',
+        image: '/projects/epeak.webp',
+        link: 'https://www.epeak.mx',
         github: '',
-        tags: ['angular', 'TypeScript', 'NodeJs', 'MongoDB'],
+        tags: ['Angular', 'Material UI', 'TypeScript', 'NodeJs', 'NestJs', 'GitLab', 'MongoDB'],
     },
     {
-        title: 'Project 2',
-        description: 'This is a project description',
-        image: 'https://via.placeholder.com/320x180',
-        link: 'https://www.google.com',
+        title: 'Codes Fortress',
+        description: 'Pagina Web contruida en React y backend con NestJs que permite registrar preguntas de entrevista, para despues poder estudiar.',
+        image: '/projects/codesfortress.webp',
+        link: 'https://codesfortress.com/',
         github: '',
-        tags: ['tag1', 'tag2'],
-    },
-    {
-        title: 'Project 2',
-        description: 'This is a project description',
-        image: 'https://via.placeholder.com/320x180',
-        link: 'https://www.google.com',
-        github: '',
-        tags: ['tag1', 'tag2'],
-    },
-    {
-        title: 'Project 2',
-        description: 'This is a project description',
-        image: 'https://via.placeholder.com/320x180',
-        link: 'https://www.google.com',
-        github: '',
-        tags: ['tag1', 'tag2'],
-    },
-    {
-        title: 'Project 3',
-        description: 'This is a project description',
-        image: 'https://via.placeholder.com/320x180',
-        link: 'https://www.google.com',
-        github: '',
-        tags: ['tag1', 'tag2'],
+        tags: ['React', 'Tailwind', 'TypeScript', 'NodeJs', 'NestJs', 'GitLab', 'MongoDB'],
     }
 ]
 ---
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col">
     {
         PROJECTS.map(({ title, description, image, link, github, tags }) => {
             return (
-                <div class="w-full max-w-sm rounded-lg shadow border border-gray-700 py-2 px-2">
-                    <h5 class="text-md font-semibold tracking-tighttext-white py-1 pt-0 opacity-70">{title}</h5>
-                    <img class="" src={image} alt={title} />
-                    <p class="text-sm opacity-80 text-wrap pt-2 pb-1">{description}</p>
-                    <div class="flex flex-wrap gap-x-1 gap-y-1 py-2">
-                        {
-                            tags.map(tag => {
-                                return (
-                                    tag
-                                )
-                            })
-                        }
+                <article class="flex flex-row w-full rounded-lg mb-4">
+                    <img class="mr-3 rounded-md flex h-full" src={image} alt={title} />
+                    <div class="flex flex-col justify-between">
+                        <div class="">
+                            <h3 class="text-lg font-bold tracking-tight py-1 pt-0 opacity-70 text-black-900/90">{title}</h5>
+                            <p class="text-sm opacity-80 text-wrap pt-2 pb-1">{description}</p>
+                            <div class="flex flex-wrap gap-x-1 gap-y-1 py-2">
+                                {
+                                    tags.map(tag => {
+                                        return (
+                                        <div class="flex items-center rounded-full bg-purple-500/10 px-3 py-1 text-xs leading-5 text-purple-400 ">{tag}</div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-around">
+                            {
+                                link && (
+                                <a href={link} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia la pagina del proyecto">Enlace</a>)
+                            }
+                            {
+                                link && (
+                                <a href={github} class="flex items-center font-medium text-md text-purple-600 dark:text-blue-500 hover:underline"  aria-label="Enlace hacia el repositorio del proyecto">Repositorio</a>)
+                            }
+                        </div>
                     </div>
-                </div>
+                </article>
             )
         })
     }

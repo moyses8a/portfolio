@@ -25,11 +25,12 @@ const PROJECTS = [
     {
         PROJECTS.map(({ title, description, image, link, linkLabel, github, tags }) => {
             return (
-                <article class="flex flex-row w-full rounded-lg mb-4">
-                    <img class="mr-3 rounded-md flex h-full" src={image} alt={title} />
-                    <div class="flex flex-col justify-between">
+                <article class="flex w-full rounded-lg mb-4 flex-wrap md:flex-nowrap flex-col md:flex-row">
+                    <h3 class="block md:hidden ml-2 text-lg font-bold tracking-tight py-1 pt-0 opacity-70 text-black-900/90">{title}</h5>
+                    <img class="rounded-md flex h-full object-cover mx-auto" src={image} alt={title} />
+                    <div class="flex flex-col justify-between ml-3">
                         <div class="">
-                            <h3 class="text-lg font-bold tracking-tight py-1 pt-0 opacity-70 text-black-900/90">{title}</h5>
+                            <h3 class="hidden md:block text-lg font-bold tracking-tight py-1 pt-0 opacity-70 text-black-900/90">{title}</h5>
                             <p class="text-sm opacity-80 text-wrap pt-2 pb-1">{description}</p>
                             <div class="flex flex-wrap gap-x-1 gap-y-1 py-2">
                                 {
